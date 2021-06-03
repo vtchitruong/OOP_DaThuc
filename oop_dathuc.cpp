@@ -11,6 +11,8 @@ public:
     Polynomial();
     Polynomial(int  n1);
 
+    Polynomial(const Polynomial& p); // copy constructor
+
     friend ostream& operator<< (ostream& os, const Polynomial &p);
     friend istream& operator>> (istream& is, Polynomial &p);
 
@@ -37,6 +39,19 @@ Polynomial::Polynomial(int n1)
     this->a = new double[n1 + 1];
 }
 
+// copy constructor
+Polynomial::Polynomial(const Polynomial& p)
+{
+    this->n = p.n;
+    this->a = new double[p.n + 1];
+
+    for (int i = 0; i <= p.n; ++i)
+    {
+        this->a[i] = p.a[i];
+    }
+}
+
+//----------------------------------
 double Polynomial::operator[](int i)
 {
     if (i < 0)
