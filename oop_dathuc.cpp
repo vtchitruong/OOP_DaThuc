@@ -8,6 +8,9 @@ private:
     double *a; // trỏ tới vùng nhớ chứa các hệ số của đa thức
 
 public:
+    Polynomial();
+    Polynomial(int  n1);
+
     friend ostream& operator<< (ostream& os, const Polynomial &p);
     friend istream& operator>> (istream& is, Polynomial &p);
 
@@ -21,6 +24,19 @@ public:
 
 };
 
+//------------------------------------
+Polynomial::Polynomial()
+{
+    this->n = 0;
+    this->a = NULL;
+}
+
+Polynomial::Polynomial(int n1)
+{
+    this->n = n1;
+    this->a = new double[n1 + 1];
+}
+
 double Polynomial::operator[](int i)
 {
     if (i < 0)
@@ -28,8 +44,6 @@ double Polynomial::operator[](int i)
     else
         return a[i];
 }
-
-
 
 //------------------------
 // Hàm tính giá trị của đa thức
