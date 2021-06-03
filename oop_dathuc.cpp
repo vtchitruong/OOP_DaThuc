@@ -87,7 +87,7 @@ istream& operator>>(istream& is, Polynomial &p)
 
     p.a = new double[p.n + 1];
 
-    cout << "Input the coefficients: ";
+    cout << "Input the coefficients: " << endl;
     for (int i = p.n; i >= 0; --i)
     {
         cout << "The " << i << " degree coefficient: ";
