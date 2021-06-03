@@ -90,7 +90,7 @@ istream& operator>>(istream& is, Polynomial &p)
     cout << "Input the coefficients: " << endl;
     for (int i = p.n; i >= 0; --i)
     {
-        cout << "The " << i << " degree coefficient: ";
+        cout << "--The " << i << " degree coefficient: ";
         is >> p.a[i];
     }
 
