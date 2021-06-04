@@ -13,6 +13,8 @@ public:
 
     Polynomial(const Polynomial& p); // copy constructor
 
+    ~Polynomial();
+
     friend ostream& operator<< (ostream& os, const Polynomial &p);
     friend istream& operator>> (istream& is, Polynomial &p);
 
@@ -49,6 +51,13 @@ Polynomial::Polynomial(const Polynomial& p)
     {
         this->a[i] = p.a[i];
     }
+}
+
+// destructor
+Polynomial::~Polynomial()
+{
+    this->n = 0;
+    delete this->a;
 }
 
 //----------------------------------
